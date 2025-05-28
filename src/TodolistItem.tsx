@@ -20,6 +20,7 @@ export const TodolistItem = ({
   changeTaskStatus,
 }: Props) => {
 
+
   const [taskTitle, setTaskTitle] = useState("");
   const [isError, setIsError] = useState<string | null>(null);
   const [isActive, setActive] = useState("all")
@@ -34,6 +35,7 @@ export const TodolistItem = ({
   };
 
   const changeTaskTitleHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsError(null)
     setIsError(null)
     setTaskTitle(event.currentTarget.value);
   };
@@ -66,6 +68,7 @@ export const TodolistItem = ({
           value={taskTitle}
           onChange={changeTaskTitleHandler}
           onKeyDown={createTaskOnEnterHandler}
+          className={isError ? "error" : ""}
         />
         <Button title={"+"} onClick={createTaskHandler} />
       </div>
