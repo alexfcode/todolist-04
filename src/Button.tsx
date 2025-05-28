@@ -2,7 +2,6 @@ type Props = {
   title: string
   onClick?: () => void
   buttonClassName?: string
-  buttonClassName?: string
 }
 
 export const Button = ({ title, onClick, buttonClassName }: Props) => {
